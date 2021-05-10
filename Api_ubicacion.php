@@ -5,7 +5,10 @@
     <title></title>
 </head>
 <body>
-
+<?
+$miVariable = $_SERVER["HTTP_CLIENT_IP"];
+echo $miVariable;
+?>
     <span></span>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
@@ -19,7 +22,7 @@
             success: function (json) {
 
                 // output the "capital" object inside "location"
-                $("span").text(json.city);
+              //  $("span").text(json.city);
                 alert(json.city);
 
             }
