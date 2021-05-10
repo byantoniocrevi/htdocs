@@ -79,9 +79,12 @@ $rs=$reparacion->getdatoreparacion($idreparacion);
     $fecha = $reparacion -> get_fecha();
     $estado = $reparacion -> get_estado();
     $precio = $reparacion -> get_precio();
+    $direccion = $reparacion -> get_direccion();
+    
 
     $nombreusuario=$reparacion->getnombre($idusuario);
     $correousuario=$reparacion->getcorreo($idusuario);
+
 
   }
 
@@ -125,6 +128,8 @@ $pdf->setY(35);$pdf->setX(75);
 $pdf->Cell(5,$textypos,"Nombre del cliente: ". $nombreusuario);
 $pdf->setY(40);$pdf->setX(75);
 $pdf->Cell(5,$textypos,"Correo del cliente: " .$correousuario);
+$pdf->setY(45);$pdf->setX(75);
+$pdf->Cell(5,$textypos,"direccion de envio: " .$direccion);
 
 
 

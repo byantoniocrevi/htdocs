@@ -102,7 +102,7 @@ if($tipo==1){
 
 <div class="b-example-divider"></div>
   <div class="container px-4 py-5" id="hanging-icons">
-    <h2 class="pb-2 border-bottom"><label id="saludo"> </label> <?php echo $nombre; ?>, Gestiona tus reparaciones en TecnoPlux <a id="horaactuals" style="color:white"> </a><br> <a id="textoultm"><a id="fechaactual" style="color:white"> </a></a> Te conectastes desde <a id="ubicacion" style="color:white"> </a></h2>
+    <h2 class="pb-2 border-bottom"><label id="saludo"> </label> <?php echo $nombre; ?>, Gestiona tus reparaciones en TecnoPlux <a id="horaactuals" style="color:white"> </a><br> <a id="textoultm"><a id="fechaactual" style="color:white"> </a></a><a id="ubicacion1"> </a><a id="ubicacion" style="color:white"> </a></h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       <div class="col d-flex align-items-start">
         <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
@@ -159,7 +159,7 @@ if($tipo==1){
 <div class="b-example-divider"></div>
 
   <div class="container px-4 py-5" id="hanging-icons">
-    <h2 class="pb-2 border-bottom"><label id="saludo"> </label> <?php echo $nombre; ?>, Gestiona las reparaciones de los clientes <a id="horaactuals" style="color:white"> </a><br> <a id="textoultm"><a id="fechaactual" style="color:white"> </a> Te conectastes desde <a id="ubicacion" style="color:white"> </a></a></h2>
+    <h2 class="pb-2 border-bottom"><label id="saludo"> </label> <?php echo $nombre; ?>, Gestiona las reparaciones de los clientes <a id="horaactuals" style="color:white"> </a><br> <a id="textoultm"><a id="fechaactual" style="color:white"> </a> <a id="ubicacion1"> </a><a id="ubicacion" style="color:white"> </a></h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       <div class="col d-flex align-items-start">
         <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
