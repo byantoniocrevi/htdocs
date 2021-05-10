@@ -55,6 +55,7 @@ if(!isset($_GET['viewid']) || $_GET['viewid'] == "" || !$rs){
    $detalles;
    $fecha;
    $nombreusuario;
+   $direccion;
   
 
   $rs=$reparacion->getdatoreparacion($idreparacion);
@@ -72,6 +73,7 @@ if(!isset($_GET['viewid']) || $_GET['viewid'] == "" || !$rs){
     $nombreusuario=$reparacion->getnombre($idusuario);
     $correousuario=$reparacion->getcorreo($idusuario);
     $ndecomentarios=$reparacion->gentnumerodecomentarios($idreparacion);
+    $direccion=$reparacion->get_direccion($idusuario);
   }
 
 }
@@ -330,12 +332,17 @@ if($inicio+$cuantos<$totalfilas)
               </div>
             </div>
 
-
+            <div class="col-12">
+              <label for="address" class="form-label">Direccion de entrega</label>
+              <input type="text" class="form-control" id="address" placeholder="Dirección de entrega" value="<?php echo $direccion ?>" readonly>
+  
+  
+            </div>
 
             <div class="col-12">
               <label for="email" class="form-label">Detalles</label>
               <textarea class="form-control" id="detalles" name="detalles" rows="3" readonly><?php echo $detalles  ?></textarea>
-             
+
             </div>
 
             <!--

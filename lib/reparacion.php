@@ -184,6 +184,7 @@ $resultado=false;
 						$this->estado = $fila['estado'];
 						$this->detalles = $fila['detalles'];
 						$this->precio = $fila['precio'];
+						$this->direccion = $fila['direccion'];
 					}
 					$resultado=true;
 					return $resultado;
