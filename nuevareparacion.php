@@ -65,6 +65,7 @@ if($resultado){
 
   <main>
 
+
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h4 class="mb-2">Nueva Reparacion</h4>
         <form class="needs-validation" method="post">
@@ -140,7 +141,7 @@ if($resultado){
     </div>
   </main>
 
-  
+
 
 
 
