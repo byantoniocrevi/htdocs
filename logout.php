@@ -8,5 +8,5 @@ exit;
 ?>
 <script>
 localStorage.clear()
-sessionStorage.clear()
+//sessionStorage.clear()
 	</script>

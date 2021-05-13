@@ -126,13 +126,13 @@ if($inicio+$cuantos<$totalfilas)
 
 
             <?php
-     echo '<a class="page-link" href="./misreparacionesencurso.php?p='.$anterior.'" tabindex="-1" style="color:black">Anterior</a>';
+     echo '<a class="page-link" href="./misreparacionescompletado.php?p='.$anterior.'" tabindex="-1" style="color:black">Anterior</a>';
       ?>
 
     </li>
     <li class="page-item">
       <?php
-     echo '<a class="page-link" href="./misreparacionesencurso.php?p='.$siguiente.'" style="color:black">Siguiente</a>';
+     echo '<a class="page-link" href="./misreparacionescompletado.php?p='.$siguiente.'" style="color:black">Siguiente</a>';
       ?>
     </li>
   </ul>

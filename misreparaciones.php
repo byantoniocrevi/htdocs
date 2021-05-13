@@ -1,4 +1,3 @@
-
 <?php
 require("./lib/reparacion.php");
 require("./lib/conexion.php");

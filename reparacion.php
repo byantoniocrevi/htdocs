@@ -101,6 +101,19 @@ if (isset($_POST['modificar'])) {
 	}
 }
 
+
+if (isset($_POST['borrar'])) {
+
+    $rs=$reparacion->borrarreparacion($idreparacion);
+
+		if($rs){
+		echo "<div  class='alert alert-success text-center' role='alert' id='borrar'>Se ha borrado la reparación</div>";
+		}else{
+			echo "<div class='alert alert-danger text-center' role='alert' id='borrar'>ERROR: No se han podido borrar la reparación</div>";
+		}
+	}
+
+
 if (isset($_POST['notas'])) {
   $comentario = htmlspecialchars(trim($_POST['comentario']));
   $fechayhora= $reparacion->fechayhora();
@@ -116,6 +129,11 @@ if (isset($_POST['notas'])) {
 
 if($rs){
   echo "<div class='alert alert-success text-center' role='alert' id='borrar'>Comentario añadido con éxito</div>";
+
+
+
+  echo '<meta http-equiv="Refresh" content="5;'.$_SERVER["REQUEST_URI"].'">';
+
 }else{
   echo "<div class='alert alert-danger text-center' role='alert' id='borrar'>ERROR: No se ha podido añadir el comentario </div>";
 }
@@ -472,6 +490,7 @@ if($tipo==2){
         
         
           <button class="w-100 btn btn-primary btn-lg" name="modificar" type="submit">Guardar</button>
+          <button class="w-100 btn btn-primary btn-lg" name="borrar" type="submit">BORRAR</button>
    
 <?php
 }

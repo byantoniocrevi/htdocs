@@ -325,8 +325,35 @@ if($tipo==1){
 	});
 
 mostramoslogin();
-       var ipv4= sessionStorage.getItem('ip');
-       apimostrarubicacion(ipv4);
+
+
+	   
+var ipv4 = localStorage.getItem("ip");
+     //   console.log(ipv4);
+          apimostrarubicacion(ipv4);
+   
+   function apimostrarubicacion(ip){
+   console.log(ip);
+   $.ajax({
+     url: 'https://ipapi.co/' + ip + "/json",
+     dataType: 'json',
+     success: function (json) {
+       $("#ubicacion1").text("Te conectastes desde " + json.city);
+   
+   
+   console.log(json.city);
+       
+     }
+   });
+   
+   
+   
+   
+
+
+$("#ubicacion").text(ubicacion);
+
+}
 
    
 

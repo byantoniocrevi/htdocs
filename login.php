@@ -104,11 +104,21 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 <script type="text/javascript">
 	registrarlogin();
-	//registarmos la direccion ip en sessionstorage
+	//registarmos la direccion ip en LocalStorage
 	function get_ip(obj){
             var ip = obj.ip;
-            sessionStorage.setItem('ip', ip)
+
+			localStorage.setItem("ip", ip);
+
+
+
+
         }
+
+
+
+
+		
 </script>
 <script type="text/javascript" src="https://api.ipify.org/?format=jsonp&callback=get_ip"></script>
 	<div class="copy-wthree">

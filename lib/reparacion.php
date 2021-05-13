@@ -347,6 +347,20 @@ function gentnumerodecomentarios($id){
 	}
 
 
+	function borrarreparacion($id){
+		$borrado=false;
+		$conexion = Conexion::conectarBD();
+		$sql ="DELETE FROM reparaciones WHERE id='$id'";
+		if ($conexion->query($sql)) {
+			$borrado = true;
+		}else{
+			$borrado = false;
+		}
+		return $borrado;
+	
+	}
+
+
 
 
 
