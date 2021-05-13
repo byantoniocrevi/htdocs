@@ -68,24 +68,20 @@ if($resultado){
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h4 class="mb-2">Nueva Reparacion</h4>
-        <form class="needs-validation" method="post">
+        <form class="needs-validation" name="newreparacion" method="post">
           <div class="row g-3">
 
 
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Marca</label>
               <input type="text" name="marca" id="marca" class="form-control"  placeholder="Introduce la marca del dispositivo"  >
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+              <label id="marcaerr" ></label>
             </div>
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Modelo</label>
               <input type="text" name="modelo" id="modelo" class="form-control" id="lastName" placeholder="Introduce el modelo del dispositivo" >
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
+              <label id="modeloerr" ></label>
             </div>
 
 
@@ -93,9 +89,10 @@ if($resultado){
           <div class="col-sm-6">
               <label for="lastName" class="form-label">Numero de serie</label>
               <input type="text" name="nserie" id="nserie" class="form-control" id="lastName" placeholder="Introduce el número de serie del dispositivo"  >
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
+              <label id="nserieerr" ></label>
+
+
+
             </div>
 
 
@@ -110,14 +107,12 @@ if($resultado){
    		 <option value="Otro">Otro</option>
               </select>
 
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
+              <label id="tipodispositivoerr" ></label>
             </div>
             <div class="col-12">
               <label for="direccion" class="form-label">Dirección de entrega</label>
               <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Introduce la direccion de entrega, por ejemplo C/Plaza España, Elche 03201 ">
-   
+              <label id="direccionerr" ></label>
 
             </div>
 
@@ -125,6 +120,8 @@ if($resultado){
             <div class="col-12">
               <label for="email" class="form-label">Detalles de la averia</label>
 			<textarea class="form-control" id="detallesaveria" name="detallesaveria" rows="3" placeholder="Introduce detalladamente lo que le ocurre al dispositivo"></textarea>
+      <label id="detalleserr" ></label>
+            
             </div>
 
             </div>
@@ -135,7 +132,7 @@ if($resultado){
 
           <hr class="my-4">
 
-          <button id="new" class="w-100 btn btn-primary btn-lg" type="submit" onclick="nuevareparacion()" name="nuevo">Nueva reparación</button>
+          <button id="new" class="w-100 btn btn-primary btn-lg"  type="submit"  name="nuevo">Nueva reparación</button>
         </form>
       </div>
     </div>
