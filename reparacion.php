@@ -266,11 +266,11 @@ if($inicio+$cuantos<$totalfilas)
         </form>
       </div>
       <div class="col-md-7 col-lg-8">
-    <!--    <h4 class="mb-3">Billing address</h4> -->
+
         <form class="needs-validation" method="POST">
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">ID de reparación</label>
+              <label class="form-label">ID de reparación</label>
               <input type="text" class="form-control" id="idreparacion" placeholder="" value="<?php echo $id  ?>" readonly>
               <div class="invalid-feedback" >
 
@@ -279,7 +279,7 @@ if($inicio+$cuantos<$totalfilas)
             <div class="col-sm-6">
               <div class="form-group">
               
-    <label for="exampleFormControlSelect1">Estado</label>
+    <label >Estado</label>
     <select class="form-control" id="estado" name="estado" disabled>
       <option value="pendiente" <?php if($estado=="pendiente") echo "selected" ?>>Pendiente</option>
       <option  value="en progreso" <?php if($estado=="en progreso") echo "selected" ?>>En progreso</option>
@@ -292,7 +292,7 @@ if($inicio+$cuantos<$totalfilas)
     
             </div>
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Nombre de cliente</label>
+              <label  class="form-label">Nombre de cliente</label>
               <input type="text" class="form-control" id="nombrecliente" placeholder="" value="<?php echo $nombreusuario ?>" readonly>
               <div class="invalid-feedback" >
 
@@ -300,7 +300,7 @@ if($inicio+$cuantos<$totalfilas)
             </div>
 
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Correo de cliente</label>
+              <label  class="form-label">Correo de cliente</label>
               <input type="text" class="form-control" id="correocliente" placeholder="" value="<?php echo $correousuario ?>" readonly>
               <div class="invalid-feedback" >
 
@@ -308,7 +308,7 @@ if($inicio+$cuantos<$totalfilas)
             </div>
             
             <div class="col-sm-6">
-              <label for="lastName" class="form-label">Tipo de dispositivo</label>
+              <label  class="form-label">Tipo de dispositivo</label>
               <input type="text" class="form-control" id="tipo" placeholder="" value="<?php echo $tipodedispositivo  ?>" readonly>
         
             </div>
@@ -316,13 +316,13 @@ if($inicio+$cuantos<$totalfilas)
    
 
             <div class="col-sm-6">
-              <label for="lastName" class="form-label">Fecha de emisión</label>
+              <label  class="form-label">Fecha de emisión</label>
               <input type="text" class="form-control" id="fecha" placeholder="" value="<?php echo $fecha  ?>" readonly>
         
             </div>
 
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Marca</label>
+              <label class="form-label">Marca</label>
               <input type="text" class="form-control" id="marca" name="marca" placeholder="" value="<?php echo $marca  ?>" readonly>
               <div class="invalid-feedback" >
 
@@ -330,20 +330,20 @@ if($inicio+$cuantos<$totalfilas)
             </div>
 
             <div class="col-sm-6">
-              <label for="lastName" class="form-label">Modelo</label>
+              <label  class="form-label">Modelo</label>
               <input type="text" class="form-control" id="modelo" name="modelo" placeholder="" value="<?php echo $modelo  ?>" readonly>
         
             </div>
 
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Nº de serie</label>
+              <label  class="form-label">Nº de serie</label>
               <input type="text" class="form-control" id="nserie" name="nserie" placeholder="" value="<?php echo $nserie  ?>" readonly>
               <div class="invalid-feedback" >
 
               </div>
             </div>
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">Precio</label>
+              <label class="form-label">Precio</label>
               <input type="text" class="form-control" id="precio" name="precio" placeholder="" value="<?php echo $precio ?>" readonly>
               <div class="invalid-feedback" >
 
@@ -351,14 +351,14 @@ if($inicio+$cuantos<$totalfilas)
             </div>
 
             <div class="col-12">
-              <label for="address" class="form-label">Direccion de entrega</label>
+              <label  class="form-label">Direccion de entrega</label>
               <input type="text" class="form-control" id="address" placeholder="Dirección de entrega" value="<?php echo $direccion ?>" readonly>
   
   
             </div>
 
             <div class="col-12">
-              <label for="email" class="form-label">Detalles</label>
+              <label class="form-label">Detalles</label>
               <textarea class="form-control" id="detalles" name="detalles" rows="3" readonly><?php echo $detalles  ?></textarea>
 
             </div>

@@ -7,7 +7,6 @@ $mysql = Conexion::conectarBD();
 $id= $_SESSION["id"];
 $tipo = $_SESSION["tipo"];
 ?>
-
 <html>
 <head>
 	<title>TecnoPlux - Home</title>
@@ -15,21 +14,13 @@ $tipo = $_SESSION["tipo"];
 	<meta charset="utf-8">
 	<meta name="keywords" content="Tecnoplux">
 	<link rel="stylesheet" href="./css/style.css" />
-
-
-
 	<script>
 	</script>
 </head>
 <body>
-
-
-
 <main class=".container-fluid">
 <section>
 <div class="container">
-
-
 <div class="table-responsive-md">
 <table class="table table-striped table-dark">
   <thead>
@@ -48,24 +39,15 @@ $tipo = $_SESSION["tipo"];
   </thead>
   <tbody>
  <?php
-
-
  $inicio=0;
    $cuantos=10;
    $anterior=0;
    $siguiente=0;
-
  if(isset($_GET['p'])){
   $inicio=$_GET['p'];
 }
-
 $result2=$mysql->query("Select count(*) as total from reparaciones");
 
-//$result=$mysql->query("SELECT nombre,fecha,comentario FROM `comentarios` INNER JOIN usuarios ON usuarios.id_usr = comentarios.id_usr WHERE id_rep =$idreparacion ORDER BY fecha DESC limit $inicio,$cuantos;");
-
-//$columnas=$result->field_count;
-//$campos=$result->fetch_fields();
-//$filas=$result->num_rows;
 $fila2=$result2->fetch_assoc();
 $totalfilas = $fila2['total'];
 ?>
@@ -117,10 +99,7 @@ if($inicio+$cuantos<$totalfilas)
   }else{
     $anterior = $inicio;
   }
-
 ?>
-
-
   <ul class="pagination justify-content-center">
     <li class="page-item">
 

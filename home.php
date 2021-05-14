@@ -15,82 +15,8 @@ require("menu.php");
   <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
   <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   <!-- Add fancyBox -->
-
-
-
-	<script>
-	</script>
 </head>
-<style>
-.b-example-divider {
-  height: 3rem;
-  background-color: rgba(0, 0, 0, .1);
-  border: solid rgba(0, 0, 0, .15);
-  border-width: 1px 0;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-}
-
-.bi {
-  vertical-align: -.125em;
-  fill: currentColor;
-}
-
-.feature-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #fff;
-  border-radius: .75rem;
-}
-
-.icon-link {
-  display: inline-flex;
-  align-items: center;
-}
-.icon-link > .bi {
-  margin-top: .125rem;
-  margin-left: .125rem;
-  transition: transform .25s ease-in-out;
-  fill: currentColor;
-}
-.icon-link:hover > .bi {
-  transform: translate(.25rem);
-}
-
-.icon-square {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.5rem;
-  border-radius: .75rem;
-}
-
-.rounded-4 { border-radius: .5rem; }
-.rounded-5 { border-radius: 1rem; }
-
-.text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
-.text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
-.text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
-
-.card-cover {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-
-
-
-
-</style>
 <body>
-
 <?php
  $nombre = $_SESSION["nombre"];
 
@@ -99,7 +25,6 @@ require("menu.php");
 <?php
 if($tipo==1){
 ?>
-
 <div class="b-example-divider"></div>
   <div class="container px-4 py-5" id="hanging-icons">
     <h2 class="pb-2 border-bottom"><label id="saludo"> </label> <?php echo $nombre; ?>, Gestiona tus reparaciones en TecnoPlux <a id="horaactuals" style="color:white"> </a><br> <a id="textoultm"><a id="fechaactual" style="color:white"> </a></a><a id="ubicacion1"> </a><a id="ubicacion" style="color:white"> </a></h2>
@@ -107,7 +32,6 @@ if($tipo==1){
       <div class="col d-flex align-items-start">
         <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
        <i class="fas fa-wrench"></i>
-
 
         </div>
         <div>
@@ -157,15 +81,12 @@ if($tipo==1){
 ?>
 
 <div class="b-example-divider"></div>
-
   <div class="container px-4 py-5" id="hanging-icons">
     <h2 class="pb-2 border-bottom"><label id="saludo"> </label> <?php echo $nombre; ?>, Gestiona las reparaciones de los clientes <a id="horaactuals" style="color:white"> </a><br> <a id="textoultm"><a id="fechaactual" style="color:white"> </a> <a id="ubicacion1"> </a><a id="ubicacion" style="color:white"> </a></h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       <div class="col d-flex align-items-start">
         <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
        <i class="fas fa-wrench"></i>
-
-
         </div>
         <div>
           <h2>Gestiona las reparaciones</h2>
@@ -229,9 +150,6 @@ if($tipo==1){
 
     <div class="container"  style="padding-bottom: 10%">
 
-
-
-
       <div  id="galeriajquery" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
         <div class="col">
@@ -246,9 +164,7 @@ if($tipo==1){
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                     
-
                       </div>
-        
               </div>
             </div>
           </div>
@@ -326,8 +242,6 @@ if($tipo==1){
 
 mostramoslogin();
 
-
-	   
 var ipv4 = localStorage.getItem("ip");
      //   console.log(ipv4);
           apimostrarubicacion(ipv4);
@@ -352,15 +266,8 @@ var ipv4 = localStorage.getItem("ip");
 
 
 $("#ubicacion").text(ubicacion);
-
 }
-
-   
-
 </script>
-
-
-
 <?php
 include("./footer.php"); 
 ?>

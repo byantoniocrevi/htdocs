@@ -6,7 +6,6 @@ $mysql = Conexion::conectarBD();
 $id= $_SESSION["id"];
 $tipo = $_SESSION["tipo"];
 ?>
-
 <html>
 <head>
 	<title>TecnoPlux - Home</title>
@@ -18,14 +17,9 @@ $tipo = $_SESSION["tipo"];
 	</script>
 </head>
 <body>
-
-
-
 <main class=".container-fluid">
 <section>
 <div class="container">
-
-
 <div class="table-responsive-md">
 <table class="table table-striped table-dark">
   <thead>
@@ -45,8 +39,6 @@ $tipo = $_SESSION["tipo"];
   <tbody>
  
   <?php
-
-
  $inicio=0;
    $cuantos=10;
    $anterior=0;
@@ -54,29 +46,11 @@ $tipo = $_SESSION["tipo"];
  if(isset($_GET['p'])){
   $inicio=$_GET['p'];
 }
-//$result2=$mysql->query("Select count(*) as total from reparaciones where id_usr = $id AND estado LIKE 'completado'");
+
 $result2=$mysql->query("Select count(*) as total from reparaciones");
 $fila2=$result2->fetch_assoc();
 $totalfilas = $fila2['total'];
-
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
 <?php
 //si somos tipo 1 (usuario mostramos solamente los que son del usuario)
 if($tipo==1){
@@ -123,9 +97,7 @@ while($row = $result->fetch_assoc()) {
   </tbody>
 </table>
 
-
 <?php
-
 if($inicio+$cuantos<$totalfilas)
 {
   $siguiente = $inicio+$cuantos;
@@ -141,8 +113,6 @@ if($inicio+$cuantos<$totalfilas)
 ?>
   <ul class="pagination justify-content-center">
     <li class="page-item">
-
-
             <?php
      echo '<a class="page-link" href="./misfacturas.php?p='.$anterior.'" tabindex="-1" style="color:black">Anterior</a>';
       ?>
@@ -154,10 +124,6 @@ if($inicio+$cuantos<$totalfilas)
       ?>
     </li>
   </ul>
-
-
-
-
 </section>
 </tbody>
 </table></div></main>
@@ -165,6 +131,5 @@ if($inicio+$cuantos<$totalfilas)
 <?php
 include("./footer.php"); 
 ?>
-
 </body>
 </html>

@@ -7,7 +7,6 @@ $mysql = Conexion::conectarBD();
 $id= $_SESSION["id"];
 $tipo = $_SESSION["tipo"];
 ?>
-
 <html>
 <head>
 	<title>TecnoPlux - Home</title>
@@ -15,21 +14,13 @@ $tipo = $_SESSION["tipo"];
 	<meta charset="utf-8">
 	<meta name="keywords" content="Tecnoplux">
 	<link rel="stylesheet" href="./css/style.css" />
-
-
-
 	<script>
 	</script>
 </head>
 <body>
-
-
-
 <main class=".container-fluid">
 <section>
 <div class="container">
-
-
 <div class="table-responsive-md">
 <table class="table table-striped table-dark">
   <thead>
@@ -61,11 +52,7 @@ $tipo = $_SESSION["tipo"];
 
 $result2=$mysql->query("Select count(*) as total from reparaciones");
 
-//$result=$mysql->query("SELECT nombre,fecha,comentario FROM `comentarios` INNER JOIN usuarios ON usuarios.id_usr = comentarios.id_usr WHERE id_rep =$idreparacion ORDER BY fecha DESC limit $inicio,$cuantos;");
 
-//$columnas=$result->field_count;
-//$campos=$result->fetch_fields();
-//$filas=$result->num_rows;
 $fila2=$result2->fetch_assoc();
 $totalfilas = $fila2['total'];
 ?>
@@ -74,15 +61,7 @@ $totalfilas = $fila2['total'];
 if($tipo==1){
    header("location: home.php");
 ?>
-
-
-
-
-
-
-
 <?php
-	
 }else{
   //si somos usuario 2 entonces tenemos que mostrar todos los registros en estado en progreso
 	$result = $mysql->query("SELECT * FROM reparaciones where estado LIKE 'en progreso' ORDER BY fecha DESC limit $inicio,$cuantos");
@@ -104,14 +83,10 @@ while($row = $result->fetch_assoc()) {
 }
 }
 ?>
-
 </div>
-  </tbody>
-
+</tbody>
 </table>
-
 <?php
-
 if($inicio+$cuantos<$totalfilas)
 {
   $siguiente = $inicio+$cuantos;
@@ -125,16 +100,11 @@ if($inicio+$cuantos<$totalfilas)
   }
 
 ?>
-
-
   <ul class="pagination justify-content-center">
     <li class="page-item">
-
-
             <?php
      echo '<a class="page-link" href="./misreparacionesenprogreso.php?p='.$anterior.'" tabindex="-1" style="color:black">Anterior</a>';
       ?>
-
     </li>
     <li class="page-item">
       <?php
@@ -142,11 +112,6 @@ if($inicio+$cuantos<$totalfilas)
       ?>
     </li>
   </ul>
-
-
-
-
-
 </section>
 </tbody>
 </table>
@@ -154,11 +119,8 @@ if($inicio+$cuantos<$totalfilas)
 </main>
 </div>
 </section>
-
-
 <?php
 include("./footer.php"); 
 ?>
-
 </body>
 </html>

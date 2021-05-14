@@ -88,14 +88,10 @@ $rs=$reparacion->getdatoreparacion($idreparacion);
 
   }
 
-
 $result=$mysql->query("Select id,marca,modelo,nserie,precio from reparaciones WHERE id='$idreparacion'");
 $columnas=$result->field_count;
 $campos=$result->fetch_fields();
 $filas=$result->num_rows;
-
-
-
 
 
 $pdf = new FPDF($orientation='P',$unit='mm');
@@ -167,7 +163,6 @@ for($cont=1;$cont<=$filas ;$cont++){
     }
     $pdf->ln(10);
 }
-
 
 
 

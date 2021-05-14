@@ -85,6 +85,7 @@ Class usuario{
 				}
 			}
 			
+			//comprobamos que no exista el email
 					function comprobaremail($email){
 				$this->email = $email;
 				$resultado="";
@@ -100,30 +101,13 @@ Class usuario{
 					
 					return $resultado;
 			}
-			/*
-							function comprobarcargo($email){
-				$this->email = $email;
-				$resultado="";
-				$conexion = Conexion::conectarBD();
-				$sql ="SELECT tipo FROM usuarios WHERE email='$email'";
-				$tipo=$conexion->query($sql);
-					$ncorreo = $ncorreo->num_rows;
-					if($ncorreo>0){
-						$resultado="<p style='color:red;'>El correo ya existe</p>";
-					}else{
-						$resultado="ok";
-					}
-					
-					return $resultado;
-			}
-			*/
-			
+
 			
 					
 			
 			
 			
-			
+			//comprobamos el cargo del usuario // tecnico o cliente
 				function comprobarcargo($email){
 				$this->email = $email;
 				$resultado=false;
@@ -152,7 +136,7 @@ Class usuario{
 		
 		
 			
-			
+			//lanzamos el registro
 
 					function registrar($nombre,$email,$password){
 				$this->nombre = $nombre;
@@ -178,7 +162,7 @@ Class usuario{
 			
 			
 
-			
+			//comprobamos los campos
 					function checkcamposlogin($email,$password){
 				$resultado="";
 				$comprobados=0;
@@ -207,7 +191,7 @@ Class usuario{
 			}
 			
 			
-
+//checkeo para el login
 			function checkloginemail($email){
 				$resultado="";
 				$this->email = $email;
@@ -227,7 +211,7 @@ Class usuario{
 			}
 
 			
-			
+			//comprobamos para el login
 			function loginusuario($email,$contraseña){
 				$this->email = $email;
 				$resultado="";
@@ -250,6 +234,7 @@ Class usuario{
 				}
 			}
 
+			//obtengo los datos
 			function getdatosuser($email){
 				$this->email = $email;
 				$resultado=false;
@@ -266,33 +251,10 @@ Class usuario{
 					return $resultado;
 			}
 	
-			function modificarusuario($nombre,$contraseña,$email){
-				$this->nombre = $nombre;
-				$this->contraseña = $contraseña;
-				$this->email = $email;
-				$modificado=false;
-				$conexion = Conexion::conectarBD();
-				$sql ="UPDATE usuarios SET nombre='$nombre',pass='$contraseña' WHERE email='$email'";
-				if ($conexion->query($sql)) {
-					$modificado = true;
-				}else{
-					$modificado = false;
-				}
-				return $modificado;
+	
 
-			}
-
-			function comentar($comentario,$fecha,$id){
-				$rs=false;
-				$conexion = Conexion::conectarBD();
-			$sql ="INSERT INTO comentarios (comentario, fecha, id_usr) VALUES ('$comentario', '$fecha', '$id');";
-				if ($conexion->query($sql)) {
-					$rs=true;
-				}else{
-					$rs=false;
-				}
-				return $rs;
-			}
+			
+			
 
 			function fecha(){
 				$fecha = date('Y-m-d H:i:s');
@@ -304,14 +266,6 @@ Class usuario{
 
 
 
-
-
-
-
 		
-
-
-
-			
 
 ?>

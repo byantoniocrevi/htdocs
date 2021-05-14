@@ -67,41 +67,11 @@ Class reparacion{
 				return $this->direccion;
 			}
 
-/*
-			function checkcampos($marca,$nserie,$detallesaveria){
-				$resultado=false;
-				$comprobados=0;
 
-
-
-				if(strlen($marca)==0){
-					$comprobados++;
-				}if(strlen($nserie)==0){
-				$comprobados++;
-			}
-
-		if(strlen($detallesaveria)==0){
-			$comprobados++;
-
-
-		}
-				if ($comprobados>0) {
-					
-					$resultado=false;
-				}else{
-					
-					$resultado=true;
-				}
-				return $resultado;
-			}
-
-*/
-
+			//Compruebo que los campos para una nueva reparacion no esten vacios
 						function checkcampos($marca,$nserie,$detallesaveria,$direccion){
 				$resultado=false;
 				$comprobados=0;
-
-
 
 				if(strlen($marca)==0){
 					$comprobados++;
@@ -131,10 +101,7 @@ Class reparacion{
 
 
 			
-
-			
-
-
+//Nueva reparación
 			function nuevareparacion($marca,$modelo,$nserie,$tipodispositivo,$detallesaveria,$fecha,$id,$direccion){
 				$this->marca = $marca;
 				$this->modelo = $modelo;
@@ -142,14 +109,10 @@ Class reparacion{
 				$this->tipodedispositivo = $tipodispositivo;
 				$this->detallesaveria = $detallesaveria;
 				$this->direccion = $direccion;
-
 				$resultado=false;
-
 				$conexion = Conexion::conectarBD();
 				$sql ="INSERT INTO reparaciones (marca, modelo, nserie, tipodispositivo, detalles, fecha, id_usr, direccion) VALUES ('$marca', '$modelo', '$nserie', '$tipodispositivo','$detallesaveria', '$fecha', '$id', '$direccion' );";
-
 				if ($conexion->query($sql)) {
-
 $resultado=true;
 
 				}else{
@@ -162,10 +125,7 @@ $resultado=false;
 				return $resultado;
 			}
 
-
-
-
-
+//obtengo los datos
 			function getdatoreparacion($id){
 				$this->id = $id;
 				$resultado=false;
@@ -176,7 +136,6 @@ $resultado=false;
 						
 						$this->id = $fila['id'];
 						$this->fecha = $fila['fecha'];
-
 						$this->marca = $fila['marca'];
 						$this->modelo = $fila['modelo'];
 						$this->nserie = $fila['nserie'];
@@ -190,7 +149,7 @@ $resultado=false;
 					return $resultado;
 			}
 
-
+//obtengo el nombre de usuario
 			function getnombre($id){
 				
 		$nombre="";
@@ -206,7 +165,7 @@ $resultado=false;
 			
 					return $nombre;
 		}
-
+//obtengo el correo
 		function getcorreo($id){
 
 			$correo="";
@@ -226,7 +185,7 @@ $resultado=false;
 
 	
 
-
+//filtro reparacion para que no pueda entrar un usuario que no sea su reparación
 function filtroreparacion($id,$idreparacion){
 	$resultado=false;
 	$conexion = Conexion::conectarBD();
@@ -245,14 +204,14 @@ function filtroreparacion($id,$idreparacion){
 
 
 
-
+//comprobamos que existe reparación
 function existereparacion($idreparacion){
 	$resultado=false;
 	$conexion = Conexion::conectarBD();
 	$sql ="SELECT * FROM reparaciones WHERE  id='$idreparacion'";
-	if ($checkemail=$conexion->query($sql)) {
-		$checkemail = $checkemail->num_rows;
-	if($checkemail<1){
+	if ($re=$conexion->query($sql)) {
+		$re = $re->num_rows;
+	if($re<1){
 	$resultado=false;
 	}else{
 	$resultado=true;
@@ -260,14 +219,14 @@ function existereparacion($idreparacion){
 	return $resultado;
 	}
 }
-
+//comprobamos que existe usuario
 function existereusuario($id){
 	$resultado=false;
 	$conexion = Conexion::conectarBD();
 	$sql ="SELECT * FROM usuarios WHERE  id_usr='$id'";
-	if ($checkemail=$conexion->query($sql)) {
-		$checkemail = $checkemail->num_rows;
-	if($checkemail<1){
+	if ($usr=$conexion->query($sql)) {
+		$usr = $usr->num_rows;
+	if($usr<1){
 	$resultado=false;
 	}else{
 	$resultado=true;
@@ -277,8 +236,7 @@ function existereusuario($id){
 }
 
 
-
-
+//modificamos reparacion
 function modificarreparacion($id,$marca,$modelo,$nserie,$precio,$detalles,$estado){
 	$this->marca = $marca;
 	$this->modelo = $modelo;
@@ -301,7 +259,7 @@ function modificarreparacion($id,$marca,$modelo,$nserie,$precio,$detalles,$estad
 }
 
 
-
+//lanzamos un nuevo comentario en la db
 function nuevocomentario($id,$idusuario,$comentario,$fecha){
 	$resultado=false;
 	$conexion = Conexion::conectarBD();
@@ -315,6 +273,7 @@ $resultado=false;
 	return $resultado;
 }
 
+//comprobamos la longitud del comentario
 function comprobarlongitudcomentario($comentario){
 	$resultado=false;
 	if(strlen($comentario)>24){
@@ -331,10 +290,7 @@ $resultado=false;
 }
 
 
-
-
-
-
+//obtenemos el numero de comentarios para despues mostrarlo
 function gentnumerodecomentarios($id){
 			$total = 0;
 			$conexion = Conexion::conectarBD();
@@ -346,7 +302,7 @@ function gentnumerodecomentarios($id){
 				return $total;
 	}
 
-
+//borramos la reparacion en base a una id
 	function borrarreparacion($id){
 		$borrado=false;
 		$conexion = Conexion::conectarBD();
@@ -359,11 +315,6 @@ function gentnumerodecomentarios($id){
 		return $borrado;
 	
 	}
-
-
-
-
-
 
 
 //para las reparaciones no es necesario hora

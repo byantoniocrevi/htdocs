@@ -21,28 +21,19 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   header("location: home.php");
   exit;
 }
-
  if (isset($_POST['login'])) {
-
  	$usuario = new Usuario();
  	$email = htmlspecialchars(trim($_POST['email']));
  	$contraseña = htmlspecialchars(trim($_POST['contraseña']));
  	$usuario = new Usuario();
-
-
  	$resultado=$usuario->checkcamposlogin($email,$contraseña);
  	if($resultado==""){
  		$resultado=$usuario->checkloginemail($email);
  		if($resultado==""){
  			$resultado=$usuario->loginusuario($email,$contraseña);
  			if($resultado==""){
- 	
-		
-				
 			$tipo=$usuario->comprobarcargo($email);
-
 			$id=$usuario->getdatosuser($email);
-
 			$id=$usuario->get_id();
 			$nombre=$usuario->get_nombre();
 
@@ -71,7 +62,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	<h1>TecnoPlux Login </h1>
 	<div class="w3ls-login box box--big">
 		<form  method="post" name="login">
-
 			<div class="agile-field-txt">
 				<label><i class="fa fa-user" ></i> Correo </label>
 				<input type="text" name="email" placeholder="Introduce el correo" required="" />
@@ -108,18 +98,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 	//registarmos la direccion ip en LocalStorage
 	function get_ip(obj){
             var ip = obj.ip;
-
 			localStorage.setItem("ip", ip);
-
-
-
-
-        }
-
-
-
-
-		
+        }	
 </script>
 <script type="text/javascript" src="https://api.ipify.org/?format=jsonp&callback=get_ip"></script>
 	<div class="copy-wthree">

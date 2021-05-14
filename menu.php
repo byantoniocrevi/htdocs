@@ -53,7 +53,6 @@ ob_start();
 		nav{
 			background-color:black;
 			position:absolute;
-			/* top:73px;  */
 			top:43px;
 			left:0px;
 			width:100%;
@@ -108,7 +107,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		<div>
 			<h1><a href="index.php">TecnoPlux</a></h1>
 			<input type="checkbox" id="btn-menu">
-			<label for="btn-menu" class="fa fa-bars barras"></label>
+			<label class="fa fa-bars barras"></label>
 			<nav>
 				<ul>
 				<?php 
