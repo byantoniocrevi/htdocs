@@ -5,9 +5,10 @@ require("menu.php");
 ?>
 <html>
 <head>
-	<title>TecnoPlux - Home</title>
+  <title>TecnoPlux - Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="Tecnoplux">
+	<meta name="keywords" content="Tecnoplux, reparaciones, telefonos, moviles, reparacion, telefonia, fix">
+    <meta name="description" content="Plataforma de gestión de reparaciones "> 
   <!-- Add jQuery library -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
   <!-- Add jQuery library -->
@@ -227,6 +228,7 @@ if($tipo==1){
 
 <script>
 
+
 	$(document).ready(function(){
 		$("#mostrar").click(function(){
 			$('#galeriajquery').show(300);
@@ -234,13 +236,14 @@ if($tipo==1){
 
 		 });
 		$("#ocultar").click(function(){
-
 			$('#galeriajquery').hide(3000);
 			
 		 });
 	});
-
+  
 mostramoslogin();
+
+
 
 var ipv4 = localStorage.getItem("ip");
      //   console.log(ipv4);
@@ -265,7 +268,7 @@ var ipv4 = localStorage.getItem("ip");
    
 
 
-$("#ubicacion").text(ubicacion);
+
 }
 </script>
 <?php
