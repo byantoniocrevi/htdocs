@@ -66,7 +66,6 @@ function Footer()
 
 
 
-
 $rs=$reparacion->getdatoreparacion($idreparacion);
 
   if($rs){
@@ -82,8 +81,8 @@ $rs=$reparacion->getdatoreparacion($idreparacion);
     $direccion = $reparacion -> get_direccion();
     
 
-    $nombreusuario=$reparacion->getnombre($idusuario);
-    $correousuario=$reparacion->getcorreo($idusuario);
+    $nombreusuario=$reparacion->getnombreclienterep($id);
+    $correousuario=$reparacion->getcorreoclienterep($id);
 
 
   }
