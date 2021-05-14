@@ -1,12 +1,35 @@
 <?php
+/*
+$servidor="localhost";
+$usuario="root";
+$password="palkia12";
+$bd="proyecto";
+function conectarBD(){
+  global $servidor,$usuario,$password,$bd;
+  $conexion = new mysqli($servidor,$usuario,$password,$bd);
+  if ($conexion->connect_errno) {
+  	echo "Error: Fallo al conectarse a MySQL debido a: \n"; 
+  	echo "Errno: " . $conexion->connect_errno . "\n";
+  	echo "Error: " . $conexion->connect_error . "\n";
+  	exit;
 
+  } 
+  $conexion->set_charset("utf8");
+  return $conexion;
+}
+
+function desconectarBD($conexion){
+  $conexion->close();
+}
+	    $con=@mysqli_connect($servidor, $usuario, $password, $bd);
+		*/
 Class Conexion{
 
 	public static function conectarBD(){
 		$server="localhost";
 		$usr="root";
-		$pass="password";
-		$bd="db";
+		$pass="palkia12";
+		$bd="proyecto";
 		$mysqli = new mysqli($server, $usr, $pass, $bd); 
 		if ($mysqli->connect_errno) { 
 			echo "Error: Fallo al conectarse a MySQL debido a: \n"; 
