@@ -297,7 +297,7 @@ function modificarreparacion($id,$marca,$modelo,$nserie,$precio,$detalles,$estad
 
 	$modificado=false;
 	$conexion = Conexion::conectarBD();
-	$sql ="UPDATE reparaciones SET marca='$marca',modelo='$modelo', nserie='$nserie', detalles='$detalles', estado='$estado' WHERE id='$id'";
+	$sql ="UPDATE reparaciones SET marca='$marca',modelo='$modelo', precio='$precio',nserie='$nserie', detalles='$detalles', estado='$estado' WHERE id='$id'";
 
 
 	if ($conexion->query($sql)) {
